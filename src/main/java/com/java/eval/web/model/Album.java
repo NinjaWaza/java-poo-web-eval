@@ -9,7 +9,7 @@ import java.util.List;
 public class Album {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "albumid") //Maybe useful because the id isn't id in database but AlbumId
     private Integer id;
 

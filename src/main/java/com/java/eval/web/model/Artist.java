@@ -10,7 +10,7 @@ import java.util.Set;
 public class Artist {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "artistid") //Maybe useful because the id isn't id in database but ArtistId
     private Integer id;
 

@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
 
     //Exception si l'utilisateur donne une valeur qui n'est pas trouvé dans la base de donées (recherche)
     @ExceptionHandler(EntityNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.NOT_FOUND) //Permet de retourner une erreur 404
     public String handleEntityNotFoundException(EntityNotFoundException entityNotFoundException){
         //On peut mettre ce que l'on veut, écrire dans un fichier de log, envoyé un mail ... plein de possibilité
         return entityNotFoundException.getMessage();
@@ -22,14 +22,14 @@ public class GlobalExceptionHandler {
 
     //Exception si l'utilisateur donne un nombre interdit
     @ExceptionHandler(IllegalArgumentException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.BAD_REQUEST) //Permet de retourner une erreur 400
     public String handleIllegalArgumentException(IllegalArgumentException e){
         return e.getMessage();
     }
 
     //Exception si l'utilisateur donne un nom qui existe déjà (lors de la création/modification)
     @ExceptionHandler(EntityExistsException.class)
-    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ResponseStatus(HttpStatus.FORBIDDEN) //Permet de retourner une erreur 403
     public String handleEntityExistsException(EntityExistsException entityExistsException){
         //On peut mettre ce que l'on veut, écrire dans un fichier de log, envoyé un mail ... plein de possibilité
         return entityExistsException.getMessage();
