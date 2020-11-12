@@ -23,8 +23,8 @@ public class MyRunner implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception{
         System.out.println("Hello world !");
-        Artist myArtiste = artistRepository.findById(1).get();
-        System.out.println(myArtiste.getName());
+//        Artist myArtiste = artistRepository.findById(1).get();
+//        System.out.println(myArtiste.getName());
 
 //        for(Artist a : this.artistRepository.findAll()){
 //            System.out.println(a.getArtistId() + " " + a.getName());
@@ -34,8 +34,12 @@ public class MyRunner implements CommandLineRunner {
 //            System.out.println(unAlbum.getAlbumId() + " " +unAlbum.getTitle());
 //        }
 
-        for(Album unAlbum : myArtiste.getAlbums()){
-            System.out.println(unAlbum.getAlbumId() + " " +unAlbum.getTitle());
+//        for(Album unAlbum : myArtiste.getAlbums()){
+//            System.out.println(unAlbum.getAlbumId() + " " +unAlbum.getTitle());
+//        }
+
+        for(Artist artist : this.artistRepository.findByNameContaining("Aerosmith")){
+            System.out.println(artist.getName());
         }
 
     }
