@@ -1,4 +1,7 @@
 package com.java.eval.web.repository;
 
-public class AlbumRepository {
+import com.java.eval.web.model.Album;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface AlbumRepository extends PagingAndSortingRepository<Album, Integer> {
 }
