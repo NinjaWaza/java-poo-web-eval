@@ -1,6 +1,7 @@
 package com.java.eval.web.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -9,19 +10,19 @@ public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name = "AlbumId") //Maybe useful because the id isn't id in database but AlbumId
-    private Integer albumId;
+    @Column(name = "albumid") //Maybe useful because the id isn't id in database but AlbumId
+    private Integer id;
 
-    @Column(name = "Title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "ArtisteId")
-    private Integer artistId;
+    @Column(name = "artistid")
+    private Integer artist;
 
     //Getters
 
     public Integer getAlbumId(){
-        return this.albumId;
+        return this.id;
     }
 
     public String getTitle(){
@@ -29,13 +30,13 @@ public class Album {
     }
 
     public Integer getArtistId(){
-        return this.artistId;
+        return this.artist;
     }
 
     //Setters
 
     public void setAlbumId(Integer albumId){
-        this.albumId = albumId;
+        this.id = albumId;
     }
 
     public void setTitle(String title){
@@ -43,6 +44,6 @@ public class Album {
     }
 
     public void setArtistId(Integer artistId){
-        this.artistId = artistId;
+        this.artist = artistId;
     }
 }
